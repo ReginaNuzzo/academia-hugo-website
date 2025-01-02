@@ -1,7 +1,7 @@
 ---
 # Display name
-name: Michael Vahn
-avatar_image: "user-full.png"
+name: Regina Nuzzo
+avatar_image: "Regina-1.jpeg"
 # Username (this should match the folder name)
 authors:
 - admin
@@ -14,18 +14,18 @@ btn:
 superuser: true
 
 # Role/position
-role: Professor of Artificial Intelligence
+role: Stats Professor and Science Journalist
 
 # Organizations/Affiliations
 organizations:
-- name: Stanford University
+- name: Gallaudet University
   url: ""
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include distributed robotics, mobile computing and programmable matter.
+bio: I love thinking about how to communicate stats
 
 # Should the user's education and interests be displayed?
-display_education: false
+display_education: true
 
 interests:
 - Artificial Intelligence
