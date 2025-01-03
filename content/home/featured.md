@@ -6,11 +6,12 @@
 widget = "featured"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 80  # Order that this section will appear.
+weight = 50  # Order that this section will appear.
 draft = true # false it if you want a featured section
 
-title = "Featured Publications"
-subtitle = ""
+title = "Writing"
+subtitle = "A few of my favorites"
+
 
 [content]
   # Page type to display. E.g. post, talk, or publication.
@@ -20,7 +21,7 @@ subtitle = ""
   count = 0
 
   # Page order. Descending (desc) or ascending (asc) date.
-  order = "desc"
+  order = "asc"
 
   # Filter posts by a taxonomy term.
   [content.filters]
@@ -34,7 +35,7 @@ subtitle = ""
   #   2 = Compact
   #   3 = Card
   #   4 = Citation (publication only)
-  view = 3
+  view = 2
   
 [design.background]
   # Apply a background color, gradient, or image.
@@ -43,7 +44,7 @@ subtitle = ""
   #   Any HTML color name or Hex value is valid.
   
   # Background color.
-  # color = "navy"
+   color = "white"
   
   # Background gradient.
   # gradient_start = "DeepSkyBlue"
@@ -63,3 +64,6 @@ subtitle = ""
  # CSS class.
  css_class = ""
 +++
+
+Check out the _Further Links_ for more
+
