@@ -76,7 +76,5 @@ projects:
 ![](https://www.knowablemagazine.org/sites/default/files/articles/167/court-forensics-comic-04-2_1.png)
 [Finish reading here.](https://www.knowablemagazine.org/article/society/2018/when-courtroom-science-goes-wrong-and-how-stats-can-fix-it)
 
-{{% alert note %}}
-Click the *Slides* button above to demo academia's Markdown slides feature.
-{{% /alert %}}
+
 
