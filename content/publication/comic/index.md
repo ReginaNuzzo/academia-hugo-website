@@ -1,5 +1,5 @@
 ---
-title: "When courtroom science goes wrong — and how stats can fix it: an illustrated feature story
+title: "When courtroom science goes wrong — and how stats can fix it: an illustrated feature story"
 authors:
 - admin
 - Maki Naro (illustrator)
