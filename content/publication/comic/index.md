@@ -66,13 +66,12 @@ projects:
 
 . . . featuring Scarface Diane, a pair of suspicious Birkenstocks, and the superhero duo Probability and Statistics.
 
-![](https://www.knowablemagazine.org/sites/default/files/articles/167/court-forensics-comic-01-1_1.png)
-![](https://www.knowablemagazine.org/sites/default/files/articles/167/court-forensics-comic-01-2_1.png)
-![](https://www.knowablemagazine.org/sites/default/files/articles/167/court-forensics-comic-02-1_1.png)
-![](https://www.knowablemagazine.org/sites/default/files/articles/167/court-forensics-comic-03-1_1.png)
-![](https://www.knowablemagazine.org/sites/default/files/articles/167/court-forensics-comic-03-2_1.png)
-![](https://www.knowablemagazine.org/sites/default/files/articles/167/court-forensics-comic-04-1_1.png)
-![](https://www.knowablemagazine.org/sites/default/files/articles/167/court-forensics-comic-04-2_1.png)
+![](https://knowablemagazine.org/docserver/fulltext/10.1146/knowable-101118-4/court-forensics-comic-01-1_1.png)
+![](https://knowablemagazine.org/docserver/fulltext/10.1146/knowable-101118-4/court-forensics-comic-01-2_1.png)
+![](https://knowablemagazine.org/docserver/fulltext/10.1146/knowable-101118-4/court-forensics-comic-02-1_1.png)
+![](https://knowablemagazine.org/docserver/fulltext/10.1146/knowable-101118-4/court-forensics-comic-03-1_1.png)
+![](https://knowablemagazine.org/docserver/fulltext/10.1146/knowable-101118-4/court-forensics-comic-03-2_1.png)
+![](https://knowablemagazine.org/docserver/fulltext/10.1146/knowable-101118-4/court-forensics-comic-04-2_1.png)
 [Finish reading here.](https://www.knowablemagazine.org/article/society/2018/when-courtroom-science-goes-wrong-and-how-stats-can-fix-it)
 
 
