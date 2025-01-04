@@ -1,5 +1,5 @@
 ---
-title: "When courtroom science goes wrong — and how stats can fix it"
+title: "When courtroom science goes wrong — and how stats can fix it: an illustrated feature story
 authors:
 - admin
 - Maki Naro (illustrator)
@@ -19,10 +19,10 @@ publication_types: ["0"]
 publication: "_Knowable Magazine_"
 publication_short: ""
 
-abstract: "COMIC: Bite marks, shoe prints, crime-scene fibers: Matches to suspects are often far shakier than courtroom experts claim. Better statistical methods — among them, a little beast known as the “likelihood ratio” — can cut down on wrong convictions."
+abstract: "Bite marks, shoe prints, crime-scene fibers: Matches to suspects are often far shakier than courtroom experts claim. Better statistical methods — among them, a little beast known as the “likelihood ratio” — can cut down on wrong convictions."
 
 # Summary. An optional shortened abstract.
-summary: "COMIC: Bite marks, shoe prints, crime-scene fibers: Matches to suspects are often far shakier than courtroom experts claim. Better statistical methods — among them, a little beast known as the “likelihood ratio” — can cut down on wrong convictions."
+summary: "Bite marks, shoe prints, crime-scene fibers: Matches to suspects are often far shakier than courtroom experts claim. Better statistical methods — among them, a little beast known as the “likelihood ratio” — can cut down on wrong convictions."
 
 tags:
 
@@ -62,6 +62,19 @@ projects:
 #   Otherwise, set `slides: ""`.
 # slides: example
 ---
+
+[A stats comic narrative](https://www.knowablemagazine.org/article/society/2018/when-courtroom-science-goes-wrong-and-how-stats-can-fix-it), in collaboration with the award-winning cartoonist [Maki Naro](https://twitter.com/sciencecomic) . . .
+
+. . . featuring Scarface Diane, a pair of suspicious Birkenstocks, and the superhero duo Probability and Statistics.
+
+![](https://www.knowablemagazine.org/sites/default/files/articles/167/court-forensics-comic-01-1_1.png)
+![](https://www.knowablemagazine.org/sites/default/files/articles/167/court-forensics-comic-01-2_1.png)
+![](https://www.knowablemagazine.org/sites/default/files/articles/167/court-forensics-comic-02-1_1.png)
+![](https://www.knowablemagazine.org/sites/default/files/articles/167/court-forensics-comic-03-1_1.png)
+![](https://www.knowablemagazine.org/sites/default/files/articles/167/court-forensics-comic-03-2_1.png)
+![](https://www.knowablemagazine.org/sites/default/files/articles/167/court-forensics-comic-04-1_1.png)
+![](https://www.knowablemagazine.org/sites/default/files/articles/167/court-forensics-comic-04-2_1.png)
+[Finish reading here.](https://www.knowablemagazine.org/article/society/2018/when-courtroom-science-goes-wrong-and-how-stats-can-fix-it)
 
 {{% alert note %}}
 Click the *Slides* button above to demo academia's Markdown slides feature.
