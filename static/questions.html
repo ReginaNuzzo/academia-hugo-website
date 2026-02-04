@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Original 40 Questions</title>
-    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Special+Elite&display=swap" rel="stylesheet">
-    <style>
+<link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Edu+SA+Beginner:wght@400;700&family=Patrick+Hand+SC&family=Zen+Loop&family=Caveat:wght@400;700&family=Kalam:wght@400;700&family=Indie+Flower&family=Special+Elite&display=swap" rel="stylesheet">    
+  <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Special Elite', monospace; min-height: 100vh; display: flex; justify-content: center; align-items: center; background: linear-gradient(135deg, #2d4a3e 0%, #1a2e24 100%); padding: 20px; }
         .container { width: 100%; max-width: 600px; }
@@ -94,6 +94,27 @@ function render(){const c=document.getElementById('card'),item=d[idx];c.classNam
 function next(){if(idx<d.length-1){idx++;render();window.scrollTo(0,0);}}
 function prev(){if(idx>0){idx--;render();window.scrollTo(0,0);}}
 document.addEventListener('keydown',e=>{if(document.getElementById('intro').style.display==='none'){if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();next();}else if(e.key==='ArrowLeft'){e.preventDefault();prev();}}});
+   // Font selector functionality - add at the end of your existing script
+document.getElementById('fontSelector').addEventListener('change', function(e) {
+    const font = e.target.value;
+    const elements = [
+        '.intro-screen h1',
+        '.subtitle',
+        '.intro-screen p',
+        '.instructions h2',
+        '.instructions li',
+        '.begin-button',
+        '.break-text',
+        '.completion-card h2',
+        '.completion-card p'
+    ];
+    
+    elements.forEach(selector => {
+        document.querySelectorAll(selector).forEach(el => {
+            el.style.fontFamily = `'${font}', cursive`;
+        });
+    });
+});
     </script>
 </body>
 </html>
