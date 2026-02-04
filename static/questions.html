@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Original 40 Questions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Special+Elite&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Special Elite', monospace; min-height: 100vh; display: flex; justify-content: center; align-items: center; background: linear-gradient(135deg, #2d4a3e 0%, #1a2e24 100%); padding: 20px; }
+        .container { width: 100%; max-width: 600px; }
+        .intro-screen { background: #2d4a3e; border: 8px solid #4a6b5a; border-radius: 8px; padding: 40px 30px; color: #f5f5dc; text-align: center; box-shadow: 0 8px 32px rgba(0,0,0,0.3), inset 0 0 80px rgba(0,0,0,0.2); }
+        .intro-screen h1 { font-family: 'Architects Daughter', cursive; font-size: 2.5em; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .subtitle { font-family: 'Architects Daughter', cursive; font-size: 1.3em; color: #e8b44f; margin-bottom: 30px; }
+        .intro-screen p { font-family: 'Architects Daughter', cursive; font-size: 1.1em; line-height: 1.6; margin-bottom: 20px; color: #e5e5d0; }
+        .instructions { background: rgba(0,0,0,0.2); padding: 20px; border-radius: 4px; margin: 30px 0; border-left: 4px solid #e8b44f; }
+        .instructions h2 { font-family: 'Architects Daughter', cursive; color: #e8b44f; margin-bottom: 15px; }
+        .instructions ul { text-align: left; margin-left: 20px; list-style: none; }
+        .instructions li { font-family: 'Architects Daughter', cursive; margin-bottom: 10px; padding-left: 20px; position: relative; }
+        .instructions li:before { content: "→"; position: absolute; left: 0; color: #e8b44f; }
+        .begin-button { background: linear-gradient(135deg, #e8b44f 0%, #d4a043 100%); color: #2d4a3e; border: none; padding: 18px 50px; font-size: 1.3em; font-family: 'Architects Daughter', cursive; font-weight: bold; border-radius: 8px; cursor: pointer; margin-top: 20px; box-shadow: 0 4px 15px rgba(232,180,79,0.4); transition: all 0.3s; }
+        .begin-button:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(232,180,79,0.6); }
+        .card-container { display: none; }
+        .card-container.active { display: block; }
+        .card { background: linear-gradient(to bottom, #f9f6e8 0%, #f5f0dc 100%); border-radius: 4px; padding: 50px 40px; box-shadow: 0 2px 4px rgba(0,0,0,0.1), 0 8px 16px rgba(0,0,0,0.15); border: 1px solid #e8dcc0; min-height: 400px; display: flex; flex-direction: column; justify-content: space-between; animation: fadeIn 0.5s; }
+        .card:before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.02) 2px, rgba(0,0,0,0.02) 4px); pointer-events: none; border-radius: 4px; }
+        .card-header { display: flex; justify-content: space-between; margin-bottom: 30px; z-index: 1; position: relative; }
+        .set-label, .question-number { font-size: 0.9em; color: #8b7355; }
+        .card-content { flex-grow: 1; display: flex; align-items: center; z-index: 1; position: relative; }
+        .question-text { font-size: 1.3em; line-height: 1.6; color: #3a3a3a; }
+        .break-card { background: linear-gradient(135deg, #e8b44f 0%, #d4a043 100%); border: 3px solid #c49940; text-align: center; justify-content: center; min-height: 300px; }
+        .break-text { font-family: 'Architects Daughter', cursive; font-size: 2em; color: #2d4a3e; margin-bottom: 20px; }
+        .break-subtitle { font-size: 1.1em; color: #2d4a3e; opacity: 0.8; }
+        .completion-card { background: linear-gradient(135deg, #2d4a3e 0%, #1a2e24 100%); border: 4px solid #4a6b5a; text-align: center; justify-content: center; }
+        .completion-card h2 { font-family: 'Architects Daughter', cursive; font-size: 2.2em; color: #e8b44f; margin-bottom: 20px; }
+        .completion-card p { font-family: 'Architects Daughter', cursive; font-size: 1.2em; color: #f5f5dc; line-height: 1.6; margin-bottom: 15px; }
+        .navigation { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; z-index: 1; position: relative; }
+        .nav-button { background: #8b7355; color: #f9f6e8; border: none; padding: 12px 30px; font-size: 1em; border-radius: 4px; cursor: pointer; transition: all 0.3s; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+        .nav-button:hover { background: #6d5940; transform: translateY(-1px); }
+        .nav-button:disabled { opacity: 0.3; cursor: not-allowed; }
+        .progress-dots { display: flex; gap: 6px; }
+        .dot { width: 8px; height: 8px; border-radius: 50%; background: #d4c4a8; transition: all 0.3s; }
+        .dot.active { background: #8b7355; transform: scale(1.3); }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @media (max-width: 600px) {
+            .intro-screen { padding: 30px 20px; }
+            .intro-screen h1 { font-size: 2em; }
+            .card { padding: 40px 25px; min-height: 350px; }
+            .question-text { font-size: 1.1em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="intro" class="intro-screen">
+            <h1>The Original 40 Questions</h1>
+            <p class="subtitle">From the 1991 Pilot Study</p>
+            <p>In 2015, the New York Times published "The 36 Questions That Lead to Love" based on psychologist Arthur Aron's research. But there's more to the story...</p>
+            <p>We dug through the dusty archives and found the <em>original 40 questions</em> from Aron's 1991 pilot study—the ones actually designed to generate romantic connection.</p>
+            <div class="instructions">
+                <h2>How to Use These Questions</h2>
+                <ul>
+                    <li>Sit face-to-face with your partner</li>
+                    <li>Take turns reading each question aloud</li>
+                    <li>Both partners answer before moving to the next card</li>
+                    <li>Take the suggested breaks between sets</li>
+                    <li>Be honest and open in your responses</li>
+                </ul>
+            </div>
+            <button class="begin-button" onclick="start()">Begin</button>
+        </div>
+        <div class="card-container" id="cards">
+            <div class="card" id="card"></div>
+        </div>
+    </div>
+    <script>
+const q={s1:["Take four minutes and tell your partner your life story in as much detail as possible.","Tell your partner something that you like about them already.","Share with your partner an embarrassing moment in your life.","If you were to die this evening with no opportunity to communicate with anyone, what would you most regret not having told someone? Why haven't you told them yet?","If you were going to have a personal relationship with your partner, please share what would be important for him or her to know.","What would constitute a \"perfect\" evening for you?","Alternate sharing something you find attractive in your partner; include the way he or she looks, dress and his or her personality. Share a total of 10 items each.","For what in your life do you feel most grateful?","If you could wake up tomorrow having gained any one ability or quality, what would it be?","How close and warm is your family? Do you feel your childhood was happier than most other people's?","What is your most treasured memory?","What is your most terrible memory?","If you were able to live to the age of 90 and retain either the mind or the body of a 30-year-old for the last 60 years of your life, which would you want?","What is the greatest accomplishment of your life?"],b1:{t:"Time for a Break",s:"Take a 30-minute break before continuing to Set II"},s2:["When did you last sing to yourself? To someone else?","Is there something that you've dreamed of doing for a long time? Why haven't you done it?","If a crystal ball could tell you the truth about yourself, your life, the future, or anything else, what would you want to know?","Share a personal problem and ask your partner's advice on how he or she might handle it. Also, ask your partner to reflect back to you how you seem to be feeling about the problem you have chosen to share.","Name 3 things you and your partner appear to have in common.","Would you like to be famous? In what way?","If you knew that in one year you would die suddenly, would you change anything about the way you are now living? Why?","Of all the people in your family, whose death would you find most disturbing? Why?","Before making a telephone call, do you ever rehearse what you are going to say? Why?","Your house, containing everything you own, catches fire; after saving your loved ones and pets, you have time to safely make a final dash to save any one item. What would it be? Why?","Given the choice of anyone in the world, whom would you want as your dinner guest?"],b2:{t:"Time for Another Break",s:"Take a one-hour break before continuing to Set III"},s3:["Make 3 true \"we\" statements each. For instance, \"We are both in this room feeling ...\"","Tell your partner what you like about them; be very honest this time saying things that you might not usually say to someone you've just met.","What do you value most in a relationship?","If you wanted to look very sexy, how would you dress?","What roles do love and affection play in your life?","Role play with your partner how you would ask them out for a date. Have your partner reflect back to you how it makes them feel to be asked.","Complete the sentence: \"I wish I had someone with whom I could share ...\"","Pretend you are in a play with your partner. In this particular scene the director has asked you to tell your partner that you are interested in having more than a casual relationship with them; that you are beginning to fall in love with them. Your partner will also be pretending with you in this play and they are to tell you how it feels to be asked to move into a more meaningful relationship.","Spend three minutes in complete silence with your partner, making only eye contact.","When did you last cry in front of another person? By yourself?","If you could change anything about the way you were raised, what would it be?","How do you feel about your relationship with your mother?","Do you have a secret hunch about how you will die?","What does love mean to you?","What, if anything, is too serious to be joked about?"]};
+const d=[...q.s1.map((t,i)=>({type:'q',set:'s1',i,t})),{type:'b',...q.b1},...q.s2.map((t,i)=>({type:'q',set:'s2',i,t})),{type:'b',...q.b2},...q.s3.map((t,i)=>({type:'q',set:'s3',i,t})),{type:'c'}];
+let idx=0;
+function start(){document.getElementById('intro').style.display='none';document.getElementById('cards').classList.add('active');render();}
+function render(){const c=document.getElementById('card'),item=d[idx];c.className='card';if(item.type==='b'){c.classList.add('break-card');c.innerHTML=`<div class="card-content"><div><div class="break-text">${item.t}</div><div class="break-subtitle">${item.s}</div></div></div><div class="navigation"><button class="nav-button" onclick="prev()">Previous</button><div></div><button class="nav-button" onclick="next()">Continue</button></div>`;}else if(item.type==='c'){c.classList.add('completion-card');c.innerHTML='<div class="card-content"><div><h2>You\'ve Completed All 40 Questions</h2><p>Thank you for taking this journey through the original questions from Aron\'s 1991 pilot study.</p><p>We hope this experience brought you closer to your partner.</p><p style="margin-top:30px;font-size:0.9em;">— The Normal Curves Team</p></div></div><div class="navigation"><button class="nav-button" onclick="prev()">Previous</button><div></div><button class="nav-button" onclick="location.reload()">Start Over</button></div>';}else{const sn=item.set==='s1'?'Set I':item.set==='s2'?'Set II':'Set III',sq=q[item.set],n=item.i+1;c.innerHTML=`<div class="card-header"><span class="set-label">${sn}</span><span class="question-number">Question ${n} of ${sq.length}</span></div><div class="card-content"><div class="question-text">${item.t}</div></div><div class="navigation"><button class="nav-button" onclick="prev()" ${idx===0?'disabled':''}>Previous</button><div class="progress-dots" id="dots"></div><button class="nav-button" onclick="next()">Next</button></div>`;const dots=document.getElementById('dots');if(dots){dots.innerHTML='';for(let i=0;i<sq.length;i++){const dot=document.createElement('div');dot.className='dot'+(i===item.i?' active':'');dots.appendChild(dot);}}}}
+function next(){if(idx<d.length-1){idx++;render();window.scrollTo(0,0);}}
+function prev(){if(idx>0){idx--;render();window.scrollTo(0,0);}}
+document.addEventListener('keydown',e=>{if(document.getElementById('intro').style.display==='none'){if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();next();}else if(e.key==='ArrowLeft'){e.preventDefault();prev();}}});
+    </script>
+</body>
+</html>
