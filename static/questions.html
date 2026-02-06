@@ -10,13 +10,48 @@
         body { font-family: 'Special Elite', monospace; min-height: 100vh; display: flex; justify-content: center; align-items: center; background: linear-gradient(135deg, #2d4a3e 0%, #1a2e24 100%); padding: 20px; }
         .container { width: 100%; max-width: 600px; }
         .intro-screen { background: #2d4a3e; border: 8px solid #4a6b5a; border-radius: 8px; padding: 40px 30px; color: #f5f5dc; text-align: center; box-shadow: 0 8px 32px rgba(0,0,0,0.3), inset 0 0 80px rgba(0,0,0,0.2); }
-        .intro-screen h1 { font-family: 'Edu SA Beginner', cursive; font-size: 2.5em; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
-        .subtitle { font-family: 'Edu SA Beginner', cursive; font-size: 1.3em; color: #e8b44f; margin-bottom: 30px; }
-        .intro-screen p { font-family: 'Edu SA Beginner', cursive; font-size: 1.1em; line-height: 1.6; margin-bottom: 20px; color: #e5e5d0; }
+.intro-screen h1 { 
+    font-family: 'Edu SA Beginner', cursive; 
+    font-size: 2.8em;  /* was 2.5em */
+    margin-bottom: 20px; 
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3); 
+}
+
+.subtitle { 
+    font-family: 'Edu SA Beginner', cursive; 
+    font-size: 1.5em;  /* was 1.3em */
+    color: #e8b44f; 
+    margin-bottom: 30px; 
+}
+
+.intro-screen p { 
+    font-family: 'Edu SA Beginner', cursive; 
+    font-size: 1.25em;  /* was 1.1em */
+    line-height: 1.6; 
+    margin-bottom: 20px; 
+    color: #e5e5d0; 
+}
+
+
+
+
+    
         .instructions { background: rgba(0,0,0,0.2); padding: 20px; border-radius: 4px; margin: 30px 0; border-left: 4px solid #e8b44f; }
-        .instructions h2 { font-family: 'Edu SA Beginner', cursive; color: #e8b44f; margin-bottom: 15px; }
+    .instructions h2 { 
+    font-family: 'Edu SA Beginner', cursive; 
+    color: #e8b44f; 
+    margin-bottom: 15px; 
+    font-size: 1.6em;  /* was 1.4em */
+}
+    
         .instructions ul { text-align: left; margin-left: 20px; list-style: none; }
-        .instructions li { font-family: 'Edu SA Beginner', cursive; margin-bottom: 10px; padding-left: 20px; position: relative; }
+.instructions li { 
+    font-family: 'Edu SA Beginner', cursive; 
+    font-size: 1.15em;  /* add this - wasn't specified before */
+    margin-bottom: 10px; 
+    padding-left: 20px; 
+    position: relative; 
+}
         .instructions li:before { content: "→"; position: absolute; left: 0; color: #e8b44f; }
         .begin-button { background: linear-gradient(135deg, #e8b44f 0%, #d4a043 100%); color: #2d4a3e; border: none; padding: 18px 50px; font-size: 1.3em; font-family: 'Edu SA Beginner', cursive; font-weight: bold; border-radius: 8px; cursor: pointer; margin-top: 20px; box-shadow: 0 4px 15px rgba(232,180,79,0.4); transition: all 0.3s; }
         .begin-button:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(232,180,79,0.6); }
